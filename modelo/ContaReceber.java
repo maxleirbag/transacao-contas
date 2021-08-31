@@ -8,9 +8,9 @@ public class ContaReceber extends Conta {
 	
 	public ContaReceber(Cliente cliente, String descricao, Double valor, String dataVencimento) {
 		this.cliente = cliente;
-		this.descricao = descricao;
-		this.valor = valor;
-		this.dataVencimento = dataVencimento;
+		this.setDescricao(descricao);
+		this.setValor(valor);
+		this.setDataVencimento(dataVencimento);
 	}
 
 	public void receber() {
