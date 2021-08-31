@@ -7,10 +7,14 @@ public class Conta {
 	String dataVencimento;
 	SituacaoConta situacao;
 	
-	Conta(){ 
-		situacao = SituacaoConta.PENDENTE;
+	public Conta(){ 
+		this.situacao = SituacaoConta.PENDENTE;
 	}
 	
+	public void cancelar(){
+		
+	}	
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -38,9 +42,5 @@ public class Conta {
 	public SituacaoConta getSituacao() {
 		return situacao;
 	}
-	
-	public void cancelar(){
 		
-	}	
-	
 }
