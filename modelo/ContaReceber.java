@@ -14,7 +14,7 @@ public class ContaReceber extends Conta {
 	}
 
 	public void receber() {
-		if (SituacaoConta.PENDENTE.equals(this.getSituacao())){
+		if (SituacaoConta.PENDENTE.equals(getSituacao())){
 			this.situacao = SituacaoConta.PAGA;
 			System.out.println("Recebendo conta " + this.getDescricao() + " no valor de " 
 				+ this.getValor() + " e vencimento em " + this.getDataVencimento() 

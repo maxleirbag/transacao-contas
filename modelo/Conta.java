@@ -12,7 +12,7 @@ public class Conta {
 	}
 	
 	public void cancelar(){
-		if (Situacao.PENDENTE.equals(getSituacao())) {
+		if (SituacaoConta.PENDENTE.equals(getSituacao())) {
 				situacao = SituacaoConta.CANCELADA;
 				System.out.println("Conta \"" + descricao + "\" cancelada com sucesso.");
 			} else {
