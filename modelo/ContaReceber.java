@@ -14,7 +14,15 @@ public class ContaReceber extends Conta {
 	}
 
 	public void receber() {
-
+		if (SituacaoConta.PENDENTE.equals(this.getSituacao())){
+			this.situacao = SituacaoConta.PAGA;
+			System.out.println("Recebendo conta " + this.getDescricao() + " no valor de " 
+				+ this.getValor() + " e vencimento em " + this.getDataVencimento() 
+				+ " do cliente " + this.getCliente().getNome() + ".");
+		}
+		else{
+			System.out.println("Não foi possível receber a conta \"" + descricao + "\", pois seu status não era Pendente.");
+		}
 	}
 
 	public void cancelar() {
