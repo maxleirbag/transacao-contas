@@ -12,7 +12,12 @@ public class Conta {
 	}
 	
 	public void cancelar(){
-		
+		if (situacao.PENDENTE.equals(getSituacao())) {
+				situacao = SituacaoConta.CANCELADA;
+				System.out.println("Conta \"" + descricao + "\" cancelada com sucesso.");
+			} else {
+				System.out.println("Não foi possível cancelar a conta \"" + descricao + "\", pois essa não estava pendente.");
+			}
 	}	
 
 	public String getDescricao() {
