@@ -18,13 +18,8 @@ public class ContaReceber extends Conta {
 	}
 
 	public void cancelar() {
-		if (valor <= 50000) {
-			if (situacao.equals(SituacaoConta.PENDENTE)) {
-				situacao = SituacaoConta.CANCELADA;
-				System.out.println("Conta " + descricao + " cancelada com sucesso.");
-			} else {
-				System.out.println("Não foi possível cancelar a conta \"" + descricao + "\", pois essa não estava pendente.");
-			}
+		if (this.getValor() <= 50000) {
+			super.cancelar();
 		}
 		else {
 			System.out.println("Não foi possível cancelar a conta \"" + descricao + "\", pois seu valor é superior a R$50.000,00.");
