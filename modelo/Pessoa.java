@@ -1,6 +1,6 @@
-package com.algaworks.sistemaV2.modelo;
+package com.algaworks.sistemaV4.modelo;
 
-public class Pessoa {
+public abstract class Pessoa {
 	String nome;
 
 	public String getNome() {

@@ -1,4 +1,4 @@
-package com.algaworks.sistemaV2.modelo;
+package com.algaworks.sistemaV4.modelo;
 
 public enum SituacaoConta {
 	PENDENTE, 

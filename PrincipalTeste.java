@@ -1,9 +1,11 @@
-package com.algaworks.sistemaV2;
+package com.algaworks.sistemaV4;
 
-import com.algaworks.sistemaV2.modelo.Cliente;
-import com.algaworks.sistemaV2.modelo.ContaPagar;
-import com.algaworks.sistemaV2.modelo.ContaReceber;
-import com.algaworks.sistemaV2.modelo.Fornecedor;
+import com.algaworks.sistemaV4.excecoes.SituacaoInvalidaException;
+import com.algaworks.sistemaV4.modelo.Cliente;
+import com.algaworks.sistemaV4.modelo.Conta;
+import com.algaworks.sistemaV4.modelo.ContaPagar;
+import com.algaworks.sistemaV4.modelo.ContaReceber;
+import com.algaworks.sistemaV4.modelo.Fornecedor;
 
 public class PrincipalTeste {
 	public static void main(String[] args) {
@@ -38,12 +40,23 @@ public class PrincipalTeste {
 		ContaReceber contaReceber2 = new ContaReceber(telecom, "Manutenção em sistema de conta online", 53200d,
 				"13/05/2012");
 
-		// pagamento e cancelamento de contas a pagar
-		contaPagar1.pagar();
-		contaPagar2.cancelar();
+		try {
+			// pagamento e cancelamento de contas a pagar
+			contaPagar1.pagar();
+			contaPagar2.cancelar();
 
-		// recebimento e cancelamento de contas a receber
-		contaReceber1.receber();
-		contaReceber2.cancelar();
+			// recebimento e cancelamento de contas a receber
+			contaReceber1.receber();
+			contaReceber1.cancelar();
+			contaReceber2.cancelar();
+		} catch (SituacaoInvalidaException erroSituacao) {
+			erroSituacao.getMessage();
+		}
+		
+		RelatorioContas relatorio = new RelatorioContas();
+		Conta[] contas = new Conta[] { contaPagar1, contaPagar2, contaReceber1, contaReceber2 };
+
+		relatorio.detalharContas(contas);
+
 	}
 }
